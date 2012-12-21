@@ -6,7 +6,8 @@
     
     function save() {
         var note_text = document.getElementById('note-text');
-        var new_note = document.createTextNode(note_text.value + ' ');
+        var new_note = document.createElement('p');
+        new_note.innerHTML = note_text.value;
         var notes = document.getElementById('note-list');
         notes.appendChild(new_note);
         
@@ -23,8 +24,9 @@
     <input id="note-text" type="text">
 </form>
 
-<div id="note-list">
-sdf sdfasdf </div>
+<div id="note-list"></div>
+
+
 
 
 
