@@ -2,18 +2,31 @@
 <!-- saved from url=(0033)file:///d/code/selfie/selfie.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-
-<script type="text/javascript" id="note-data">var data = {"foo":5};</script>
-
 <script type="text/javascript">
-    for (var key in data) {
-        alert(key);
-    }
-    data['x'] = 'y';
     
-    var js_node = document.getElementById('note-data');
-    js_node.text = 'var data = ' + JSON.stringify(data) + ';';
-</script></head><body>
+    function save() {
+        var note_text = document.getElementById('note-text');
+        var new_note = document.createTextNode(note_text.value + ' ');
+        var notes = document.getElementById('note-list');
+        notes.appendChild(new_note);
+        
+        note_text.value = '';
+    
+        return false;
+    }
+    
+    
+</script></head>
+
+
+<body><form onsubmit="return save()">
+    <input id="note-text" type="text">
+</form>
+
+<div id="note-list">
+sdf sdfasdf </div>
+
+
 
 
 
