@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
     
-    function save() {
+    function add() {
         var note_text = document.getElementById('note-text');
         var new_note = document.createElement('p');
         new_note.innerHTML = note_text.value;
@@ -20,11 +20,12 @@
 </script></head>
 
 
-<body><form onsubmit="return save()">
+<body><form onsubmit="return add()">
     <input id="note-text" type="text">
 </form>
 
 <div id="note-list"></div>
+
 
 
 
