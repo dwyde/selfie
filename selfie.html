@@ -4,15 +4,26 @@
 
 <script type="text/javascript">
     
+    function remove_button(note) {
+        var remove_button = document.createElement('button');
+        remove_button.innerHTML = 'X';
+        remove_button.onclick = function() {
+            note.parentNode.removeChild(note);
+        }
+        return remove_button;
+    }
+    
     function add() {
         var note_text = document.getElementById('note-text');
         var new_note = document.createElement('p');
         new_note.innerHTML = note_text.value;
+        
+        var remove_link = remove_button(new_note);
+        new_note.appendChild(remove_link);
+        
         var notes = document.getElementById('note-list');
         notes.appendChild(new_note);
-        
         note_text.value = '';
-    
         return false;
     }
     
@@ -24,7 +35,8 @@
     <input id="note-text" type="text">
 </form>
 
-<div id="note-list"></div>
+<div id="note-list"><p>sdkljf<button>X</button></p><p>lkjsdflksjdf<button>X</button></p><p>adsfb aaa<button>X</button></p></div>
+
 
 
 
