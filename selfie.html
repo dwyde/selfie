@@ -2,48 +2,31 @@
 <!-- saved from url=(0033)file:///d/code/selfie/selfie.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
+</head><body>
+    <form id="new-note">
+        <input id="note-text" type="text">
+    </form>
+
+    <div id="note-list"><p>This is a test.<button class="remove">X</button></p></div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <script type="text/javascript">
     
-    function remove_button(note) {
-        var remove_button = document.createElement('button');
-        remove_button.innerHTML = 'X';
-        remove_button.onclick = function() {
-            note.parentNode.removeChild(note);
-        }
-        return remove_button;
-    }
-    
-    function add() {
-        var note_text = document.getElementById('note-text');
-        var new_note = document.createElement('p');
-        new_note.innerHTML = note_text.value;
-        
-        var remove_link = remove_button(new_note);
-        new_note.appendChild(remove_link);
-        
-        var notes = document.getElementById('note-list');
-        notes.appendChild(new_note);
-        note_text.value = '';
+    // Dynamically create notes.
+    $('#new-note').submit(function(){
+        var note_text = $('#note-text');
+        var new_node = $('<p>' + note_text.val() + '<button class="remove">X</button></p>');
+        $('#note-list').append(new_node);
+        note_text.val('');
         return false;
-    }
+    });
     
+    // Enable "remove" buttons.
+    $('.remove').live('click', function(){
+        $(this).parent('p').remove();
+    });
     
-</script></head>
-
-
-<body><form onsubmit="return add()">
-    <input id="note-text" type="text">
-</form>
-
-<div id="note-list"><p>sdkljf<button>X</button></p><p>lkjsdflksjdf<button>X</button></p><p>adsfb aaa<button>X</button></p></div>
-
-
-
-
-
-
-
-
-
+</script>
 
 </body></html>
