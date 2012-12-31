@@ -1,6 +1,6 @@
 Intro
 -----
-This is an experiment in self-modifying HTML files, inspired by *TiddlyWiki*.
+This is an experiment in self-contained HTML files, inspired by *TiddlyWiki*.
 
 The idea is to have a to-do list stored entirely in an HTML file.
 
