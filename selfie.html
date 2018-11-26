@@ -1,13 +1,15 @@
-
-<!-- saved from url=(0043)file:///d/code/selfie/selfie.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-</head><body>
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <style>
+            .remove {color: red; margin-right: 0.5em;}
+        </style>
+    </head>
+    <body>
     <form id="new-note">
         <input id="note-text" type="text">
     </form>
 
-    <div id="note-list"><p>This is a test<button class="remove">X</button></p></div>
+    <div id="note-list"><p><button class="remove">X</button>This is a test</p><p><button class="remove">X</button>Here's another note</p></div>
 
 <script type="text/javascript">
 
@@ -26,8 +28,8 @@
         
         // Combine the new note's text and removal button.
         var newNote = document.createElement('p');
-        newNote.appendChild(noteText);
         newNote.appendChild(removeButton);
+        newNote.appendChild(noteText);
         
         // Append the new note to the list of notes.
         var noteList = document.getElementById('note-list');
@@ -49,5 +51,6 @@
     };
 
 </script>
+
 
 </body></html>
